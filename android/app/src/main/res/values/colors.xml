@@ -1,0 +1,6 @@
+<resources>
+    <!-- Native splash background; a warm cream that matches the full splash
+         design's overall tone so the mandatory system-splash flash blends into
+         the design that paints right after. -->
+    <color name="splash_background">#FBE7CE</color>
+</resources>
