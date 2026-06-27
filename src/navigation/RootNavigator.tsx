@@ -14,8 +14,8 @@ import { useTheme } from '@/theme';
 
 import { AuthNavigator } from './AuthNavigator';
 import { linking } from './linking';
-import { MainDrawerNavigator } from './MainDrawerNavigator';
 import { navigationRef } from './navigationRef';
+import { HomeStack } from './stacks/HomeStack';
 import type { RootStackParamList } from './types';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -52,7 +52,7 @@ export function RootNavigator() {
         <RootStack.Screen name="Splash" component={SplashScreen} />
         <RootStack.Screen name="Onboarding" component={OnboardingScreen} />
         <RootStack.Screen name="Auth" component={AuthNavigator} />
-        <RootStack.Screen name="Main" component={MainDrawerNavigator} />
+        <RootStack.Screen name="Main" component={HomeStack} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

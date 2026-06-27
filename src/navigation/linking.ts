@@ -20,17 +20,8 @@ export const linking: LinkingOptions<RootStackParamList> = {
       },
       Main: {
         screens: {
-          Tabs: {
-            screens: {
-              HomeTab: { screens: { HomeFeed: 'home', Details: 'item/:id' } },
-              NotificationsTab: {
-                screens: { NotificationsHome: 'notifications' },
-              },
-              ProfileTab: { screens: { ProfileHome: 'profile' } },
-            },
-          },
-          Settings: 'settings',
-          About: 'about',
+          HomeFeed: 'home',
+          Details: 'item/:id',
         },
       },
     },

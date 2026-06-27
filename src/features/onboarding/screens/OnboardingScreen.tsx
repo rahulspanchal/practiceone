@@ -149,6 +149,7 @@ export function OnboardingScreen() {
               horizontal
               pagingEnabled
               showsHorizontalScrollIndicator={false}
+              removeClippedSubviews={false}
               onMomentumScrollEnd={onMomentumEnd}
               renderItem={({ item, index: i }) => (
                 <OnboardingSlide

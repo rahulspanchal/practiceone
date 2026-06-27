@@ -41,7 +41,7 @@ export type RootStackParamList = {
   Splash: undefined;
   Onboarding: undefined;
   Auth: NavigatorScreenParams<AuthStackParamList>;
-  Main: NavigatorScreenParams<MainDrawerParamList>;
+  Main: NavigatorScreenParams<HomeStackParamList>;
 };
 
 declare global {

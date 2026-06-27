@@ -57,10 +57,7 @@ export function SplashScreen() {
 
     const timer = setTimeout(() => {
       if (tokenStorage.hasSession()) {
-        navigation.replace('Main', {
-          screen: 'Tabs',
-          params: { screen: 'HomeTab', params: { screen: 'HomeFeed' } },
-        });
+        navigation.replace('Main', { screen: 'HomeFeed' });
       } else {
         navigation.replace('Onboarding');
       }

@@ -94,10 +94,7 @@ export function LoginScreen() {
         refreshToken: 'mock.refresh',
       });
       dispatch(authenticated({ userId: values.email }));
-      navigation.replace('Main', {
-        screen: 'Tabs',
-        params: { screen: 'HomeTab', params: { screen: 'HomeFeed' } },
-      });
+      navigation.replace('Main', { screen: 'HomeFeed' });
     },
     [dispatch, navigation],
   );

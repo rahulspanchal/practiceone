@@ -28,6 +28,12 @@ export function OnboardingSlide({
 }: OnboardingSlideProps) {
   const ribbonWidth = width * 1.4;
   const cardLift = Math.round(height * 0.06);
+  // Give the athlete cut-out a concrete height instead of `flex: 1`. A flex
+  // child can momentarily collapse to 0 while the paged list re-measures (e.g.
+  // as Android insets settle), and a 0-height <Image> renders nothing — which
+  // is why the body sometimes vanished. Deriving from the slide height keeps it
+  // stable across those reflow frames.
+  const photoHeight = Math.max(340, Math.round(height * 0.46));
 
   return (
     <View style={[styles.slide, { width, height }]}>
@@ -38,7 +44,13 @@ export function OnboardingSlide({
         </View>
       </View>
 
-      <Image source={slide.image} style={styles.photo} resizeMode="contain" />
+      <Image
+        source={slide.image}
+        style={[styles.photo, { height: photoHeight }]}
+        resizeMode="contain"
+      />
+
+      <View style={styles.spacer} pointerEvents="none" />
 
       <View style={[styles.cardStack, { marginBottom: cardLift }]}>
         <View style={styles.backCard2} pointerEvents="none" />
@@ -114,12 +126,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   photo: {
-    flex: 1,
     width: '100%',
-    minHeight: 375,
     marginTop: 0,
     marginBottom: -10,
     zIndex: 1,
+  },
+  spacer: {
+    flex: 1,
   },
   cardStack: {
     width: '100%',
