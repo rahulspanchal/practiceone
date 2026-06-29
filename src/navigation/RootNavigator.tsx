@@ -47,7 +47,14 @@ export function RootNavigator() {
         backgroundColor="transparent"
       />
       <RootStack.Navigator
-        screenOptions={{ headerShown: false, animation: 'none' }}
+        screenOptions={{
+          headerShown: false,
+          animation: 'none',
+          // Brand peach behind every screen so screen-to-screen handoffs (e.g.
+          // Splash -> Onboarding) never flash white — which read as the logo
+          // "blinking" at the cut.
+          contentStyle: { backgroundColor: '#F4BE87' },
+        }}
       >
         <RootStack.Screen name="Splash" component={SplashScreen} />
         <RootStack.Screen name="Onboarding" component={OnboardingScreen} />

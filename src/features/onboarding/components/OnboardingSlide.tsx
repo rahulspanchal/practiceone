@@ -93,6 +93,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 8,
     paddingBottom: 32,
+    // Clip the over-wide tilted ribbon so it bleeds cleanly to the screen edges
+    // instead of poking a stray white "strap" out past the right edge.
+    overflow: 'hidden',
   },
   ribbonWrap: {
     width: '100%',

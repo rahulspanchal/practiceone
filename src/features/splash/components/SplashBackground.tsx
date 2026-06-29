@@ -39,8 +39,10 @@ export function SplashBackground({ width, height }: SplashBackgroundProps) {
     (_, i) => innerRing + ringGap * i,
   );
 
-  // Large cream disc the logo sits on.
-  const discRadius = width * 0.44;
+  // Large soft white glow the logo sits on — big and diffuse so it reads as a
+  // blurred halo (not a hard disc) and the rings show through it, matching the
+  // reference splash.
+  const discRadius = width * 0.62;
 
   return (
     <Svg
@@ -70,9 +72,10 @@ export function SplashBackground({ width, height }: SplashBackgroundProps) {
           gradientUnits="userSpaceOnUse"
         >
           <Stop offset="0" stopColor="#FFFFFF" stopOpacity={1} />
-          <Stop offset="0.6" stopColor="#FFFAF4" stopOpacity={1} />
-          <Stop offset="0.9" stopColor="#FEF3E7" stopOpacity={1} />
-          <Stop offset="1" stopColor="#FCECDA" stopOpacity={0} />
+          <Stop offset="0.35" stopColor="#FFFFFF" stopOpacity={0.92} />
+          <Stop offset="0.6" stopColor="#FFFFFF" stopOpacity={0.5} />
+          <Stop offset="0.82" stopColor="#FFFFFF" stopOpacity={0.18} />
+          <Stop offset="1" stopColor="#FFFFFF" stopOpacity={0} />
         </RadialGradient>
       </Defs>
 
