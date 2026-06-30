@@ -163,7 +163,10 @@ export function HomeScreen() {
       <ProfileActionSheet
         visible={actionSheetOpen}
         onClose={() => setActionSheetOpen(false)}
-        onViewSettings={() => setActionSheetOpen(false)}
+        onViewSettings={() => {
+          setActionSheetOpen(false);
+          navigation.navigate('Settings');
+        }}
         onViewStatus={() => {
           setActionSheetOpen(false);
           setStoryOpen(true);

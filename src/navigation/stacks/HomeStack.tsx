@@ -1,10 +1,13 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
+import { AssessmentReportScreen } from '@/features/home/screens/AssessmentReportScreen';
 import { DetailsScreen } from '@/features/home/screens/DetailsScreen';
 import { HomeScreen } from '@/features/home/screens/HomeScreen';
 import { MyScheduleScreen } from '@/features/home/screens/MyScheduleScreen';
+import { MyProfileScreen } from '@/features/home/screens/MyProfileScreen';
 import { SessionDetailsScreen } from '@/features/home/screens/SessionDetailsScreen';
+import { SettingsScreen } from '@/features/home/screens/SettingsScreen';
 
 import type { HomeStackParamList } from '../types';
 
@@ -32,6 +35,21 @@ export function HomeStack() {
       <Stack.Screen
         name="SessionDetails"
         component={SessionDetailsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="MyProfile"
+        component={MyProfileScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="AssessmentReport"
+        component={AssessmentReportScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

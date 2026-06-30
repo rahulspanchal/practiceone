@@ -17,6 +17,9 @@ export type HomeStackParamList = {
   Details: { id: string };
   MySchedule: undefined;
   SessionDetails: undefined;
+  Settings: undefined;
+  MyProfile: undefined;
+  AssessmentReport: { sport?: string } | undefined;
 };
 
 export type NotificationsStackParamList = {
