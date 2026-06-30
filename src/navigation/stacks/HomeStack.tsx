@@ -3,6 +3,8 @@ import React from 'react';
 
 import { DetailsScreen } from '@/features/home/screens/DetailsScreen';
 import { HomeScreen } from '@/features/home/screens/HomeScreen';
+import { MyScheduleScreen } from '@/features/home/screens/MyScheduleScreen';
+import { SessionDetailsScreen } from '@/features/home/screens/SessionDetailsScreen';
 
 import type { HomeStackParamList } from '../types';
 
@@ -21,6 +23,16 @@ export function HomeStack() {
         name="Details"
         component={DetailsScreen}
         options={{ title: 'Details' }}
+      />
+      <Stack.Screen
+        name="MySchedule"
+        component={MyScheduleScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SessionDetails"
+        component={SessionDetailsScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

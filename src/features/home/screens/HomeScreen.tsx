@@ -1,9 +1,12 @@
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, { Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
 
 import { Screen } from '@/components/atoms';
+import type { HomeStackParamList } from '@/navigation/types';
 
 import { DashboardHeader } from '../components/DashboardHeader';
 import { DashboardLoading } from '../components/DashboardLoading';
@@ -112,6 +115,8 @@ function DashboardBackground() {
 
 /** Main Dashboard. Top bar, then the "Next Session" card; more sections follow. */
 export function HomeScreen() {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<HomeStackParamList>>();
   // Brief loading state: show the rotating dot spinner for 2s, then reveal the
   // dashboard content.
   const [loading, setLoading] = useState(true);
@@ -147,7 +152,7 @@ export function HomeScreen() {
           </View>
 
           <View style={styles.listSection}>
-            <MyScheduleCard />
+            <MyScheduleCard onPress={() => navigation.navigate('MySchedule')} />
             <StudentCard />
             <MyCoachesCard />
             <LeaderboardCard />

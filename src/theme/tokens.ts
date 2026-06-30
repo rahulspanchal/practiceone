@@ -154,6 +154,9 @@ export const fontFamily = {
   italic: 'DMSans-Italic',
   mediumItalic: 'DMSans-MediumItalic',
   boldItalic: 'DMSans-BoldItalic',
+  // Lato — used by specific design elements (e.g. calendar legend labels).
+  latoRegular: 'Lato-Regular',
+  latoMedium: 'Lato-Medium',
 } as const;
 
 export const typography = {

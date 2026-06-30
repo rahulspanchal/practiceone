@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Full-screen branded cold-start background: the exact JS splash design
-     (warm radial gradient, ripple rings, cream disc, Legaxy wordmark) so the
-     native launch matches the in-app splash. Stretched to fill the window. -->
+<!-- Window background shown during the native->JS gap (after the system splash,
+     while the JS bundle boots). It draws splash_full.png, which is a pixel-exact
+     copy of the JS SplashView (same cover-scaled backdrop + same centred logo at
+     0.62 of the screen width), so the gap is visually identical to the JS splash
+     and the launch reads as one continuous splash with no flash. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/splash_background" />
     <item>

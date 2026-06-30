@@ -1,11 +1,15 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import {
+  SafeAreaProvider,
+  initialWindowMetrics,
+} from 'react-native-safe-area-context';
 import { Provider as ReduxProvider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { ErrorBoundary } from '@/components/feedback/ErrorBoundary';
+import { SplashView } from '@/features/splash/components/SplashView';
 import { queryClient } from '@/network';
 import { persistor, store } from '@/store';
 import { ThemeProvider } from '@/theme';
@@ -21,9 +25,9 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     <GestureHandlerRootView style={styles.flex}>
       <ErrorBoundary>
         <ReduxProvider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
+          <PersistGate loading={<SplashView />} persistor={persistor}>
             <QueryClientProvider client={queryClient}>
-              <SafeAreaProvider>
+              <SafeAreaProvider initialMetrics={initialWindowMetrics}>
                 <ThemeProvider>{children}</ThemeProvider>
               </SafeAreaProvider>
             </QueryClientProvider>

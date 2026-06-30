@@ -15,6 +15,8 @@ export type AuthStackParamList = {
 export type HomeStackParamList = {
   HomeFeed: undefined;
   Details: { id: string };
+  MySchedule: undefined;
+  SessionDetails: undefined;
 };
 
 export type NotificationsStackParamList = {
